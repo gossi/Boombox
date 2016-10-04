@@ -1,0 +1,8 @@
+{{#tether-dialog close="cancel"
+				target=(concat "#library-navitem-" model.id)
+            	targetAttachment="top right"
+				attachment="top left"
+            	translucentOverlay=false
+				container-class="boombox-dialog"}}
+    {{library-dialog library=model save="save" cancel="cancel" delete="delete" add="add" remove="remove"}}
+{{/tether-dialog}}

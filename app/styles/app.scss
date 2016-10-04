@@ -1,0 +1,77 @@
+@import 'bootstrap';
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+#top {
+	background-color: #EEE;
+}
+
+#sidebar {
+	position: fixed;
+	top: 54px;
+	bottom: 80px;
+	width: 200px;
+	background-color: #EEE;
+
+	li {
+		padding-left: 5px;
+		padding-right: 5px;
+
+		.active {
+			font-weight: bold;
+		}
+	}
+
+	.nav-item a {
+		cursor: default;
+	}
+
+	.nav-header {
+
+	}
+
+	.icon {
+		float: right;
+	}
+
+	li.library .edit {
+		display: none;
+	}
+
+	li.library:hover .edit {
+		display: inline;
+	}
+
+	#playlists {
+		margin-top: 10px;
+	}
+}
+
+main {
+	position: fixed;
+	top: 54px;
+	bottom: 80px;
+	left: 201px;
+}
+
+#player {
+	//position: fixed;
+	height: 80px;
+	background-color: #CCC;
+	width: 100%;
+	//bottom: 0;
+}
+
+.boombox-dialog {
+	form {
+		margin-top: 15px;
+	}
+
+	label {
+		padding-left: 0;
+	}
+
+	.row > div:last-child {
+		padding-right: 0;
+	}
+}

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-fixed-top" id="top">
+  <a class="navbar-brand" href="#">Fixed top</a> - Current Lib: {{library.current.title}}
+</nav>
+
+<nav id="sidebar">
+	<ul class="nav" id="libraries">
+		<li class="nav-header">
+			{{fa-icon "book" fixedWidth=true}} Libraries {{#link-to "library.new" class="icon"}}{{fa-icon "plus"}}{{/link-to}}
+		</li>
+		{{#each model as |lib|}}
+			<li class="nav-item library" id="library-navitem-{{lib.id}}">
+				<a {{action "changeLibrary" lib}} class="{{if (eq library.current.id lib.id) 'active'}}">{{lib.title}}</a>
+				{{#link-to "library.edit" lib.id class="icon edit"}}{{fa-icon "pencil"}}{{/link-to}}
+			</li>
+		{{/each}}
+	</ul>
+
+	<ul class="nav" id="playlists">
+		<li class="nav-header">
+			{{fa-icon "list" fixedWidth=true}} Playlists
+		</li>
+		<li class="nav-item">
+			<a class="nav-link disabled" href="#">Disabled</a>
+		</li>
+	</ul>
+</nav>
+
+<main>
+	{{outlet}}
+</main>
+
+<div id="player" class="navbar navbar-fixed-bottom">
+hui
+</div>
