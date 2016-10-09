@@ -7,7 +7,9 @@ export default Ember.Route.extend({
 
 	actions: {
 		add(folder) {
+			console.log('add folder');
 			this.modelFor(this.routeName).get('folders').pushObject(folder);
+			console.log(this.modelFor(this.routeName).changedAttributes());
 		},
 
 		remove(folder) {

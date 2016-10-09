@@ -8,7 +8,14 @@ export default Ember.Route.extend(RollbackRoute, {
 
 	actions: {
 		add(folder) {
-			this.modelFor(this.routeName).get('folders').pushObject(folder);
+			const model = this.modelFor(this.routeName);
+			if (model.get('isNew')) {
+				model.save().then(() => {
+					model.pushObject(folder);
+				})
+			} else {
+				this.modelFor(this.routeName).pushObject(folder);
+			}
 		},
 
 		remove(folder) {
@@ -22,6 +29,10 @@ export default Ember.Route.extend(RollbackRoute, {
 		},
 
 		cancel() {
+			const model = this.modelFor(this.routeName);
+			if (!model.get('isNew')) {
+				model.destroyRecord();
+			}
 			history.back();
 		}
 	}

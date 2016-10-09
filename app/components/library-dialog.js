@@ -31,7 +31,8 @@ export default Ember.Component.extend({
 
 					if (!exists) {
 						const folder = this.get('store').createRecord('folder', {
-							path: path
+							path: path,
+							library: library
 						});
 						folder.save();
 						// library.get('folders').pushObject(folder);
